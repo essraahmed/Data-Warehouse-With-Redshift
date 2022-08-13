@@ -3,12 +3,12 @@
 
 # Data Warehouse With Amazon Redshift
 
-### Introduction
+## Introduction
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
 As their data engineer, you are tasked with building an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights into what songs their users are listening to.
 
-### Project Dataset
+## Project Dataset
 There are two datasets that reside in S3:
 
 - Song data: `s3://udacity-dend/song_data`
@@ -31,7 +31,7 @@ log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
 ```
 
-### Project Files
+## Project Files
 
 1. `create_tables.py`: Creating the fact and dimension tables for the star schema in Redshift.
 2. `etl.py`: Is where will load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
@@ -39,13 +39,13 @@ log_data/2018/11/2018-11-13-events.json
 4. `dwh.cfg`: Conatians Redshift database and IAM Role info.
 6. `README.md`: provides discussion on the project.
 
-### Redshift Cluster
+## Redshift Cluster
 1. Create Redshift IAM Role and On the **Attach permissions policies** page, search for and select the **AmazonS3ReadOnlyAccess**.
 2. Create Security Group (through the EC2 security group) to authorize access to the Redshift cluster.
 3. Create Redshift cluster, then put the database info and `arn` in dwh.confg file.
 4. Delete the Redshift cluster when finished.
 
-### Database Schema Design
+## Database Schema Design
 
 ![Schema](Images/schema.png)
 
@@ -67,7 +67,7 @@ log_data/2018/11/2018-11-13-events.json
 4. ***time*** - timestamps of records in songplays broken down into specific units
         -start_time, hour, day, week, month, year, weekday
 
-### ETL pipeline
+## ETL pipeline
 
 The ETL Pipeline consists of 2 steps:
 1. Load data from S3 to staging tables on Redshift.
@@ -81,7 +81,7 @@ The architecture below shows the Data Flow:
 
 ![Etl](Images/pipe.png)
 
-### How to run the Python Scripts
+## How to run the Python Scripts
 
 #### To create tables
 1. Run `create_tables.py` to create your database and tables.
@@ -91,5 +91,5 @@ The architecture below shows the Data Flow:
 2. Run `etl.py`, Remember to run `create_tables.py` before running `etl.py`.
   ``` python etl.py```
 
-### Author
+## Author
 Esraa Ahmed | <a href="https://linkedin.com/in/esraa-ahmed-ibrahim2" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="esraa-ahmed-ibrahim2" height="15" width="15" /></a>
