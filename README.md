@@ -39,9 +39,16 @@ log_data/2018/11/2018-11-13-events.json
 4. `dwh.cfg`: Conatians Redshift database and IAM Role info.
 6. `README.md`: provides discussion on the project.
 
+### Redshift Cluster
+
+
 ### Database Schema Design
 
 ![Schema](Images/schema.png)
+
+#### Staging Tables:
+1. ***staging_event***: for log data.
+2. ***staging_song***: for song data.
 
 #### Fact Table:
 1. ***songplays***: records in log data associated with song plays i.e. records with page NextSong
@@ -63,18 +70,13 @@ The ETL Pipeline consists of 2 steps:
 1. Load data from S3 to staging tables on Redshift.
 2. Execute SQL statements in `sql_queries.py` that create the analytics tables from these staging tables.
 
-First, I will extract data from S3 and staging them in Redshift using `COPY` Command. The staging tables are: `staging_event` & `staging_song` .
-Then transform data into a set of dimensional tables and fact table with Star Schema.
+First, I will extract data from S3 and staging them in Redshift using `COPY` Command. The staging tables are: `staging_event` & `staging_song`.
+Transform data into a set of dimensional tables and fact table with Star Schema. Then, load data from staging tables to analytics tables on Redshift with `INSERT INTO` statment.
+To avoid duplication data, use `SELECT DISTINCT`.
 
+The architecture below shows the Data Flow:
 
 ![Etl](Images/pipeline.png)
-
-1. Implement the logic in `etl.py` to load data from S3 to staging tables on Redshift.
-2. Implement the logic in `etl.py` to load data from staging tables to analytics tables on Redshift.
-3. Test by running `etl.py` after running `create_tables.py` and running the analytic queries on your Redshift database to compare your results with the expected results.
-4. Delete the redshift cluster when finished.
-
-
 
 ### How to run the Python Scripts
 
@@ -83,7 +85,7 @@ Then transform data into a set of dimensional tables and fact table with Star Sc
   ``` python create_tables.py```
   
 #### To run ETL pipeline
-2. Run `etl.py`, Remember to run `create_tables.py` before running `etl.py` to reset your tables.
+2. Run `etl.py`, Remember to run `create_tables.py` before running `etl.py`.
   ``` python etl.py```
 
 ### Author
