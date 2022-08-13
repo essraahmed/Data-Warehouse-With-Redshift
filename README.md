@@ -67,7 +67,7 @@ log_data/2018/11/2018-11-13-events.json
 4. ***time*** - timestamps of records in songplays broken down into specific units
         -start_time, hour, day, week, month, year, weekday
 
-## ETL pipeline
+## ETL Pipeline
 
 The ETL Pipeline consists of 2 steps:
 1. Load data from S3 to staging tables on Redshift.
