@@ -52,7 +52,7 @@ Project files<br>
 
 ### Database Schema Design
 
-![Schema](schema.png)
+![Schema](Images/schema.png)
 
 #### Fact Table:
 1. ***songplays***: records in log data associated with song plays i.e. records with page NextSong
@@ -72,6 +72,9 @@ Project files<br>
 The ETL pipeline will process the data from JSON files `song_data` and `log_data` to create database using Python and SQL.
 `song_data` To create the songs and artists dimensional tables.
 `log_data` To create the time and users dimensional tables, as well as the songplays fact table.
+
+![Etl](Images/pipeline.png)
+
 
 ### How to run the Python Scripts
 
