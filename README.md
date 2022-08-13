@@ -40,7 +40,10 @@ log_data/2018/11/2018-11-13-events.json
 6. `README.md`: provides discussion on the project.
 
 ### Redshift Cluster
-
+1. Create Redshift IAM Role and On the **Attach permissions policies** page, search for and select the **AmazonS3ReadOnlyAccess**.
+2. Create Security Group (through the EC2 security group) to authorize access to the Redshift cluster.
+3. Create Redshift cluster, then put the database info and `arn` in dwh.confg file.
+4. Delete the Redshift cluster when finished.
 
 ### Database Schema Design
 
@@ -76,7 +79,7 @@ To avoid duplication data, use `SELECT DISTINCT`.
 
 The architecture below shows the Data Flow:
 
-![Etl](Images/pipeline.png)
+![Etl](Images/pipe.png)
 
 ### How to run the Python Scripts
 
