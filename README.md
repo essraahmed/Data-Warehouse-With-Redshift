@@ -1,5 +1,7 @@
+[![build - passing](https://img.shields.io/badge/build-passing-2ea44f)](https://)
+[![Maintainability - A](https://img.shields.io/badge/Maintainability-A-2ea44f)](https://)
 
-# Data Warehouse With Amazon Redshift
+# Data Warehouse With Amazon Redshift and Visulizing AWS Redshift data using Python
 
 ## Introduction
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
@@ -35,6 +37,7 @@ log_data/2018/11/2018-11-13-events.json
 2. `etl.py`: Is where will load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
 3. `sql_queries.py`: Contains all sql queries, and is imported into the two files above.
 4. `dwh.cfg`: Conatians Redshift database and IAM Role info.
+5. `analysis.ipynb`: Contains sql queries and data visualization after loading data. 
 6. `README.md`: provides discussion on the project.
 
 ## Redshift Cluster
@@ -88,6 +91,20 @@ The architecture below shows the Data Flow:
 #### To run ETL pipeline
 2. Run `etl.py`, Remember to run `create_tables.py` before running `etl.py`.
   ``` python etl.py```
+
+## Analysis
+After loading data, I created some SQL queries and Visualization.
+
+#### Here's an exmple of SQL queries:
+ ```
+ df_song = pd.read_sql("SELECT  COUNT(*) FROM song;", conn)
+     df_song
+ >> 14896
+ ```
+
+#### Top 10 songs played
+![songs](song.png)
+
 
 ## Author
 Esraa Ahmed | <a href="https://linkedin.com/in/esraa-ahmed-ibrahim2" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="esraa-ahmed-ibrahim2" height="15" width="15" /></a>
