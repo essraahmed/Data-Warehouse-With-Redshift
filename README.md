@@ -103,7 +103,7 @@ After loading data, I created some SQL queries and Visualization.
  ```
 
 #### Top 10 songs played
-![songs](song.png)
+![songs](Images/song.png)
 
 
 ## Author
