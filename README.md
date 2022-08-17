@@ -109,7 +109,7 @@ Connect Power BI to Redshift to create dashboard:
 4. Once you successfully connect, click load > Import.
 5. Build your Dashboard. 
 
-![dashboard](Images/dashboard.png)
+![dashboard](Images/dashboard1.png)
 
 
 ## Author
