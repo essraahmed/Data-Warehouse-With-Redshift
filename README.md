@@ -102,12 +102,13 @@ After loading data, I created some SQL queries and Visualization.
  >> 14896
  ```
 ## Visualize Redshift data with Power BI
-Connect Power BI to Redshift to create dashboard
+Connect Power BI to Redshift to create dashboard:
 1. To connect to an Amazon Redshift database, select Get data > Database > Amazon Redshift.
 2. In the Amazon Redshift window that appears, type your Amazon Redshift Server and Database.
 3. Then put in your username and password.
 4. Once you successfully connect, click load > Import.
-5. Build your Dashboard.
+5. Build your Dashboard. 
+
 ![dashboard](Images/dashboard.png)
 
 
