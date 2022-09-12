@@ -1,3 +1,5 @@
+# Created by esraa ahmed on 15/08/2022
+
 import configparser
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
@@ -39,6 +41,7 @@ def main():
     config.read('dwh.cfg')
 
     #Connect to the host
+    # Created by esraa ahmed on 15/8/2022
     conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(*config['CLUSTER'].values()))
     cur = conn.cursor()
 
@@ -52,3 +55,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# Created by esraa ahmed on 15/08/2022
