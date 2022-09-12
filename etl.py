@@ -1,3 +1,5 @@
+# Created by esraa ahmed on 15/8/2022
+
 import configparser
 import psycopg2
 from sql_queries import copy_table_queries, insert_table_queries
@@ -52,3 +54,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+ # Created by esraa ahmed on 15/8/2022   
