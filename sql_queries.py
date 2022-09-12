@@ -1,3 +1,4 @@
+# Created by esraa ahmed on 15/8/2022
 import configparser
 
 
@@ -93,7 +94,7 @@ artist_table_create = (""" CREATE TABLE IF NOT EXISTS artist(artist_id VARCHAR(M
                                                              SORTKEY(artist_id);
 
 """)
-
+# Created by esraa ahmed on 15/08/2022
 time_table_create = (""" CREATE TABLE IF NOT EXISTS time(start_time TIMESTAMP NOT NULL PRIMARY KEY,
                                                          hour int,
                                                          day int,
@@ -168,9 +169,11 @@ time_table_insert = (""" INSERT INTO time (start_time, hour, day, week, month, y
                          WHERE start_time IS NOT NULL;
 """)
 
-# QUERY LISTS
+# QUERY LISTS Created by esraa ahmed on 15/08/2022
 
 create_table_queries = [staging_events_table_create, staging_songs_table_create, songplay_table_create, user_table_create, song_table_create, artist_table_create, time_table_create]
 drop_table_queries = [staging_events_table_drop, staging_songs_table_drop, songplay_table_drop, user_table_drop, song_table_drop, artist_table_drop, time_table_drop]
 copy_table_queries = [staging_events_copy, staging_songs_copy]
 insert_table_queries = [songplay_table_insert, user_table_insert, song_table_insert, artist_table_insert, time_table_insert]
+
+# Created by esraa ahmed on 15/08/2022
